@@ -21,12 +21,9 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install jupyter nbconvert snowflake-snowpark-python
+          pip install snowflake-snowpark-python
 
-      - name: Verify Jupyter Installation
-        run: jupyter --version  # Ensure Jupyter is installed correctly
-
-      - name: Execute Jupyter Notebook
+      - name: Execute Python Script
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
