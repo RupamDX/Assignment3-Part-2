@@ -16,13 +16,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9' # Adjust as needed
+          python-version: '3.9'  # Adjust if needed
 
       - name: Install Dependencies
         run: |
-          pip install snowflake-snowpark-python
+          pip install --upgrade pip
+          pip install jupyter nbconvert snowflake-snowpark-python
 
-      - name: Execute Snowpark Task
+      - name: Verify Jupyter Installation
+        run: jupyter --version  # Ensure Jupyter is installed correctly
+
+      - name: Execute Jupyter Notebook
         env:
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
@@ -30,5 +34,4 @@ jobs:
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
-        run: jupyter nbconvert --to notebook --execute "snowpark_task.ipynb"
-        
+        run: jupyter nbconvert --to notebook --execute "snowpark_task.ipynb" --output "output.ipynb"
