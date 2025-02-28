@@ -43,8 +43,8 @@ def check_task_status():
         logger.error(f"Error fetching task status: {str(e)}")
 
 # Step 1: Execute Stored Procedures Using the Provided Session
-#execute_stored_procedure("PROCESS_TOM_PROCESSED_STREAM()")
-execute_stored_procedure("UPDATE_TRAVEL_TIME_METRICS()")
+#execute_stored_procedure("HARMONIZE_DATA()")
+execute_stored_procedure("HARMONIZE_DATA()")
 
 
 # Step 2: Monitor the Task Execution
