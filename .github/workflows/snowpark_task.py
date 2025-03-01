@@ -8,12 +8,12 @@ logger = logging.getLogger("SNOWFLAKE_TASKS")
 
 # Snowflake Connection
 connection_params = {
-    "account": "dgeyskn-tob19336",
-    "user": "Vamshika12",
-    "password": "Asvmsh@12Agsgr@27",
-    "warehouse": "COMPUTE_WH",
-    "database": "FRED_FINANCIAL_DATA",
-    "schema": "HARMONIZED_DOW30"
+    "account": os.getenv("SNOWFLAKE_ACCOUNT"),
+    "user": os.getenv("SNOWFLAKE_USER"),
+    "password": os.getenv("SNOWFLAKE_PASSWORD"),
+    "warehouse": os.getenv("SNOWFLAKE_WAREHOUSE"),
+    "database": os.getenv("SNOWFLAKE_DATABASE"),
+    "schema": os.getenv("SNOWFLAKE_SCHEMA"),
 }
 
 # Create a Snowpark Session
