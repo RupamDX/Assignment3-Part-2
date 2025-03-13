@@ -1,0 +1,5 @@
+environment: DEV
+role: DEV_ROLE
+warehouse: DEV_WH
+schema: DEV_SCHEMA
+database: DEV_DB

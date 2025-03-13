@@ -1,0 +1,5 @@
+environment: PROD
+role: PROD_ROLE
+warehouse: PROD_WH
+schema: PROD_SCHEMA
+database: PROD_DB

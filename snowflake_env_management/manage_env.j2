@@ -1,0 +1,19 @@
+-- manage_env.j2
+-- Jinja template to configure Snowflake environment dynamically
+
+USE ROLE {{ role }};
+USE WAREHOUSE {{ warehouse }};
+USE DATABASE {{ database }};
+USE SCHEMA {{ schema }};
+
+CREATE TABLE IF NOT EXISTS {{ schema }}.SAMPLE_TABLE (
+    ID INTEGER AUTOINCREMENT,
+    NAME STRING,
+    CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+{% if environment == 'DEV' %}
+    GRANT ALL PRIVILEGES ON TABLE {{ schema }}.SAMPLE_TABLE TO ROLE {{ role }};
+{% elif environment == 'PROD' %}
+    GRANT SELECT ON TABLE {{ schema }}.SAMPLE_TABLE TO ROLE READ_ONLY_ROLE;
+{% endif %}
