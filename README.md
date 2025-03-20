@@ -19,3 +19,6 @@ Welcome to the **FRED Data Pipeline** repository! This project demonstrates how 
 ##Architecture Diagram
 ![fred_data_pipeline](https://github.com/user-attachments/assets/f64ac4f6-1f51-4e00-b588-ce41bb3b6460)
 
+##AiUseDisclosure
+Tools used for debugging and understanding the tool setup flow Chatgpt Gemini
+1.Used the tool to setup the applications in local , add integrations on different applications. 2.Used it for debugging and solving errors 3.Helped us understand the flow of different tools and optimize our solutions 4.Understand the basic use of airflow,snowflake and configure it.
