@@ -15,3 +15,7 @@ Welcome to the **FRED Data Pipeline** repository! This project demonstrates how 
 4. **Analytics Table**: Another Stream feeds a stored procedure or transformation logic that creates daily analytics metrics over a rolling 7-day window.  
 5. **Automation**: GitHub Actions schedules the pipeline daily.  
 6. **Environment Management**: Jinja templates help manage DEV vs. PROD differences (schemas, roles, table names, etc.).  
+
+##Architecture Diagram
+![fred_data_pipeline](https://github.com/user-attachments/assets/f64ac4f6-1f51-4e00-b588-ce41bb3b6460)
+
