@@ -30,3 +30,4 @@ def execute_stored_procedure(procedure_name):
 
 # Run the procedure
 execute_stored_procedure("FRED_FINANCIAL_DATA.HARMONIZED_DOW30.HARMONIZE_DATA")
+execute_stored_procedure("FRED_FINANCIAL_DATA.ANALYTICS_DOW30.UPDATE_DOW30_SP")
